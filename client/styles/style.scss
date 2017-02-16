@@ -1,0 +1,223 @@
+@media only screen and (min-device-width: 320px) and (max-device-width: 374px) and (orientation : portrait) {
+  /*iPhone 5 Portrait*/
+  html{
+    font-size: 48px;
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 374px) and (orientation : landscape) {
+  /*iPhone 5 landscape*/
+  html{
+    font-size: 48px;
+  }
+}
+
+@media only screen and (min-device-width: 374px) and (max-device-width: 666px) and (orientation : portrait) {
+  /*iPhone 6 Portrait*/
+  html{
+    font-size: 50px;
+  }
+}
+
+@media only screen and (min-device-width: 374px) and (max-device-width: 666px) and (orientation : landscape) {
+  /*iPhone 6 landscape*/
+  html{
+    font-size: 50px;
+  }
+}
+
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation : portrait) {
+  /*iPhone 6+ Portrait*/
+  html{
+    font-size: 52px;
+  }
+}
+
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation : landscape) {
+  /*iPhone 6+ landscape*/
+  html{
+    font-size: 52px;
+  }
+}
+
+@import "var";
+
+body {
+  a {
+    color: #474747;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  .am-tab-bar-bar{
+    z-index: 999;
+  }
+  img{
+    max-width: 100%;
+  }
+  .audit_icon{
+    color: $danger;
+  }
+  .check_icon{
+    color: $primary;
+  }
+}
+.am-button-primary{
+  background-color: $primary;
+  border: 1PX solid $primary;
+
+  &.am-button-active{
+    background: darken($primary, 10%);
+  }
+}
+
+.am-button-ghost{
+
+  &.btn-danger{
+    color: $danger;
+    border: 1PX solid $danger;
+
+    &.am-button-active{
+      color: #fff;
+      background-color: $danger;
+      border: 1PX solid $danger;
+    }
+  }
+}
+
+.bb{
+  .am-list-item{
+
+    .am-list-line{
+
+      &:after{
+        border-color: $fenge;
+      }
+    }
+    .am-input-label,.am-list-content{
+      font-size: 0.32rem;
+      color: $black;
+    }
+    .am-list-extra{
+      font-size: 0.32rem;
+      color: $gray;
+    }
+    .am-input-control{
+      input{
+        font-size: 0.32rem;
+        color: $gray;
+      }
+    }
+    .am-textarea-control{
+      textarea{
+        font-size: 0.32rem;
+        color: $gray;
+      }
+    }
+  }
+
+
+  //全局实心按钮设置
+  .am-button{
+
+    &.btn-md{
+      height: .78rem;
+      width: 2.58rem;
+      line-height: .78rem;
+      font-size: .36rem;
+    }
+    &.btn-sm{
+      height: .56rem;
+      width: 1.04rem;
+      line-height: .56rem;
+      font-size: .24rem;
+      padding: 0 .1rem;
+    }
+
+    &.btn-primary{
+      color: #fff;
+      background-color: $primary;
+      border: 1PX solid $primary;
+
+      &.am-button-active{
+        background: darken($primary, 10%);
+      }
+    }
+    &.btn-waring{
+      color: #fff;
+      background-color: $waring;
+      border: 1PX solid $waring;
+
+      &.am-button-active{
+        background: darken($waring, 10%);
+      }
+    }
+    &.btn-danger{
+      color: #fff;
+      background-color: $danger;
+      border: 1PX solid $danger;
+
+      &.am-button-active{
+        background: darken($waring, 10%);
+      }
+    }
+
+    &:disabled{
+      background-color: $gray!important;
+    }
+  }
+
+  //全局空心按钮设置
+  .am-button.am-button-ghost{
+    &.btn-primary{
+      color: $primary;
+      background: none;
+      border: 1PX solid $primary;
+
+      &.am-button-active{
+        color: #fff;
+        background-color: $primary;
+        border: 1PX solid $primary;
+      }
+    }
+    &.btn-waring{
+      color: $waring;
+      background: none;
+      border: 1PX solid $waring;
+
+      &.am-button-active{
+        color: #fff;
+        background-color: $waring;
+        border: 1PX solid $waring;
+      }
+    }
+    &.btn-danger{
+      color: $danger;
+      background: none;
+      border: 1PX solid $danger;
+
+      &.am-button-active{
+        color: #fff;
+        background-color: $danger;
+        border: 1PX solid $danger;
+      }
+    }
+
+
+
+  }
+
+}
+
+.left-60{
+  .am-list-content{
+    -ms-flex-preferred-size: initial!important;
+    flex-basis: initial!important;
+  }
+}
+.right-60{
+  .am-list-extra{
+    -ms-flex-preferred-size: initial!important;
+    flex-basis: initial!important;
+  }
+}

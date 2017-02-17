@@ -6,6 +6,7 @@ import {
     Platform,
     BackAndroid,
     Image,
+    ScrollView
 } from 'react-native';
 import { Flex, List, WhiteSpace, Modal } from 'antd-mobile';
 import { _localStorage } from '../../common/bbPlugin'
@@ -65,7 +66,9 @@ class Personal extends React.Component {
         }
         const {routes} = this.context
         return (
-            <View>
+            <ScrollView
+                automaticallyAdjustContentInsets={false}
+                contentContainerStyle={{paddingBottom: 50}}>
                 <List.Item
                     style={_style.itemBig}
                     thumb={
@@ -162,7 +165,7 @@ class Personal extends React.Component {
                 </List>
                 <WhiteSpace size="lg"/>
 
-            </View>
+            </ScrollView>
         )
     }
 }

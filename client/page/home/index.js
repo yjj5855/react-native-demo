@@ -70,13 +70,12 @@ class Home extends Component{
         switch (tabName){
             case 'home':
                 title = '首页'
-
                 break;
             case 'member':
                 title = '我的'
                 break;
             case 'banbu':
-                title = '班步'
+                title = '消息'
                 break;
         }
         Home.selectedTab = tabName
@@ -114,7 +113,7 @@ class Home extends Component{
                     hidden={this.state.hidden}
                 >
                     <TabBar.Item
-                        title="班步"
+                        title="消息"
                         key="班步"
                         icon={require('../../../img/tabbar-icon-banbu.png')}
                         selectedIcon={require('../../../img/tabbar-icon-banbu-active.png')}

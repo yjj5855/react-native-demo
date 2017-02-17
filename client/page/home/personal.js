@@ -26,7 +26,10 @@ const _style = StyleSheet.create({
     itemTitleGray: {
         color: '#aaa',
         fontSize: 15,
-        marginRight: 13
+    },
+    itemText13: {
+        color: '#aaa',
+        fontSize: 13,
     },
     itemImage: {
         width:20,
@@ -69,23 +72,25 @@ class Personal extends React.Component {
             <ScrollView
                 automaticallyAdjustContentInsets={false}
                 contentContainerStyle={{paddingBottom: 50}}>
-                <List.Item
-                    style={_style.itemBig}
-                    thumb={
-                        <Avatar style={_style.itemAvatar} nick={'张三'} size="lg" />
-                    }
-                    arrow="horizontal"
-                    extra={<View style={{height: 80}}></View>}
-                    onClick={() => { console.log('头像') }}
-                >
-                    <Flex>
-                        <Text style={_style.itemTitle}>张三</Text>
-                        <View style={{width:0.5,backgroundColor:'#aaa',height:15,marginHorizontal : 10}}></View>
-                        <Text style={_style.itemTitleGray}>产品规划部</Text>
-                        <Text style={_style.itemTitleGray}>产品经理</Text>
-                    </Flex>
-                    <List.Item.Brief>智者千虑，必有一失；愚者千虑，必有一得</List.Item.Brief>
-                </List.Item>
+                <List>
+                    <List.Item
+                        style={_style.itemBig}
+                        thumb={
+                            <Avatar style={_style.itemAvatar} nick={'张三'} size="lg" />
+                        }
+                        arrow="horizontal"
+                        extra={<View style={{height: 80}}></View>}
+                        onClick={() => { console.log('头像') }}
+                    >
+                        <Flex>
+                            <Text style={_style.itemTitle}>张三</Text>
+                            <View style={{width:0.5,backgroundColor:'#aaa',height:15,marginHorizontal : 10}}></View>
+                            <Text style={[_style.itemTitleGray,{marginRight: 13}]}>产品规划部</Text>
+                            <Text style={_style.itemTitleGray}>产品经理</Text>
+                        </Flex>
+                        <List.Item.Brief>智者千虑，必有一失；愚者千虑，必有一得</List.Item.Brief>
+                    </List.Item>
+                </List>
                 <WhiteSpace size="lg"/>
 
                 <List>
@@ -93,11 +98,22 @@ class Personal extends React.Component {
                         style={_style.item}
                         thumb={<Image style={_style.itemImage} source={require('../../../img/personal-me.png')}/>}
                         arrow="horizontal"
+                        extra={
+                            <Flex>
+                                <Text style={_style.itemText13}>完成度
+                                    <Text style={{color:'#1ab394'}}>80%</Text>
+                                </Text>
+                            </Flex>
+                        }
                         onClick={() => {
                             console.log('个人信息')
                         }}
                     >
-                        <Text style={_style.itemTitle}>个人信息</Text>
+                        <Flex>
+                            <Text style={_style.itemTitle}>个人信息</Text>
+                            <View style={{width:10}}></View>
+                            <Image source={require('../../../img/NEW.png')} style={{width:35.5,height:16.5}}/>
+                        </Flex>
                     </List.Item>
                     <List.Item
                         arrow="horizontal"

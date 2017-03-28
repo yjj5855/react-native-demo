@@ -23,8 +23,10 @@
   "devDependencies": {
     "babel-jest": "18.0.0",
     "babel-preset-react-native": "1.9.1",
+    "babel-preset-react-native-stage-0": "^1.0.1",
     "jest": "18.1.0",
-    "react-test-renderer": "~15.4.0"
+    "react-test-renderer": "~15.4.0",
+    "redux-promise": "^0.5.3"
   },
   "jest": {
     "preset": "react-native"

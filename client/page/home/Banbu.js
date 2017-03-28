@@ -95,7 +95,9 @@ class Banbu extends Component{
 
     }
     componentWillMount(){
-        this.props.messageList().catch((err)=>{
+        this.props.messageList().then((data)=>{
+            console.log(data)
+        }).catch((err)=>{
             console.log(err)
         })
     }

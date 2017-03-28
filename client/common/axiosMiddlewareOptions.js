@@ -1,4 +1,3 @@
-import { getActionTypes } from 'redux-axios-middleware/lib/getActionTypes'
 
 export const returnRejectedPromiseOnError = true;
 
@@ -13,3 +12,7 @@ export const onComplete = ( { action, next, getState, dispatch }, actionOptions)
     next(nextAction);
     return nextAction;
 };
+
+function getActionTypes(actionOptions) {
+  return actionOptions[0]+'_COMPLETE'
+}

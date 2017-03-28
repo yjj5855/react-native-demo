@@ -39,35 +39,23 @@ axios.interceptors.request.use(function (request) {
             delete request.params.send_token;
         }
     }
-
-
     return request
 })
 //response过滤
 axios.interceptors.response.use(function (response) {
     // 这里提前处理返回的数据
-    if(typeof response == 'object'){
-        if(response.status == 200){
-            return response.data;
-        }else{
-            logException(new Error(response.status+' 错误'), response)
-        }
-    }else{
-        logException(new Error('接口返回不是一个对象'), response)
-    }
+    // if(typeof response == 'object'){
+    //     if(response.status == 200){
+    //         return response.data;
+    //     }else{
+    //         logException(new Error(response.status+' 错误'), response)
+    //     }
+    // }else{
+    //     logException(new Error('接口返回不是一个对象'), response)
+    // }
     return response;
 }, function (error) {
-    try{
-        logException(new Error(error.response.status+' 错误'), error.response)
 
-        if(error.response.status == 403){
-            alert('token过期,请重新打开页面')
-            window.token_error = true
-            dd.biz.navigation.close();
-        }
-    }catch (err){
-
-    }
     return Promise.reject(error);
 });
 

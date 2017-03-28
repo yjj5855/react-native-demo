@@ -106,14 +106,19 @@ class Home extends Component{
     };
 
     componentDidMount() {
-        console.log(Actions.main({}))
-        // this.props.userHome().finally(()=>{
-        //
-        // })
+        console.log('123')
+        this.props.userHome()
+          .then((data)=>{
+            console.log(data)
+          })
+          .catch(err=>{
+              console.log(err)
+          })
+          .finally((err)=>{
+
+        })
     }
     renderRow = function(list, sectionID, rowID,){
-        
-
         return (
             <Flex key={rowID}>
                 
@@ -126,9 +131,9 @@ class Home extends Component{
         }
         this.setState({ refreshing: true });
 
-        // this.props.userHome().then(()=>{
-        //     this.setState({ refreshing: false });
-        // })
+        this.props.userHome().then(()=>{
+            this.setState({ refreshing: false });
+        })
 
     }
     render(){

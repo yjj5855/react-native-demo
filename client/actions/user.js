@@ -1,5 +1,5 @@
 import {getOrgUrl, _localStorage} from '../common/bbPlugin'
-
+import storage from '../common/storage'
 
 //yjj
 
@@ -329,12 +329,11 @@ export function cancelOffWork(data) {
 }
 
 //班步首页
-export function messageList() {
-    let local = null;
+export async function messageList() {
+    let local = await storage.getItem('time')
     let past = local ? local['1'] : '0';
     let outWork = local ? local['2'] : '0';
     let offWork = local ? local['3'] : '0';
-
     return {
         type: 'MESSAGE_LIST',
         payload: {

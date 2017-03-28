@@ -13,7 +13,6 @@ class Home extends Component{
     static selectedTab = 'home'
     static renderTitle = function () {
         let navbar = <View></View>
-        console.log(Home.selectedTab)
         if(Home.selectedTab == 'home'){
             navbar = (
                 <Flex.Item>
@@ -79,7 +78,6 @@ class Home extends Component{
                 break;
         }
         Home.selectedTab = tabName
-        console.log(Home.selectedTab)
         Actions.refresh({ selectedTab: tabName })
     }
     getHomeByUserType = function(){

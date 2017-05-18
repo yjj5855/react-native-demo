@@ -2,9 +2,7 @@ import { AsyncStorage } from 'react-native'
 
 export default {
   getItem : async function (key){
-
     let value = await AsyncStorageGetItem(key)
-
     return { '1': 0, '2': 0, '3': 0 }
   }
 }

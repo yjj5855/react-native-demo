@@ -1,4 +1,4 @@
-import {getOrgUrl, _localStorage} from '../common/bbPlugin'
+import {getOrgUrl} from '../common/bbPlugin'
 import storage from '../common/storage'
 
 //yjj
@@ -205,7 +205,9 @@ let date = new Date();
 let sjc = date.getTime();
 
 //员工首页
-export function userHome() {
+export async function userHome() {
+  let local = await storage.getItem('approvalListData.timestamp')
+  console.log('员工首页', local)
     return {
         type: 'USER_HOME_INITIAL',
         payload: {
@@ -330,7 +332,7 @@ export function cancelOffWork(data) {
 
 //班步首页
 export async function messageList() {
-    let local = await storage.getItem('time')
+    let local = await storage.getItem('approvalListData.timestamp')
     let past = local ? local['1'] : '0';
     let outWork = local ? local['2'] : '0';
     let offWork = local ? local['3'] : '0';

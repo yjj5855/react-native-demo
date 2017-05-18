@@ -1,4 +1,5 @@
 import {Map, List, fromJS} from 'immutable'
+import storage from '../common/storage'
 
 function user(state = Map({}), aciton) {
 
@@ -443,6 +444,11 @@ function user(state = Map({}), aciton) {
         case 'MESSAGE_LIST':
             return state;
         case 'MESSAGE_LIST_SUCCESS':
+
+            let aa = storage.getItem('approvalListData.timestamp')
+            console.log('aa', aa)
+          return state
+
             let messageList = state.get('messageList') ? state.get('messageList').toJS() : [];
             messageList = aciton.payload.data;
             return state.setIn(['messageList'], fromJS(messageList));

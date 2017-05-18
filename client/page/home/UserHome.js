@@ -137,6 +137,7 @@ class Home extends Component{
 
     }
     render(){
+        console.log(this.props.$$user)
         const userHome = this.props.$$user.get('userHome') ? this.props.$$user.get('userHome').toJS() : [];
 
         return (

@@ -12,6 +12,7 @@ import { Router, Actions, Scene } from 'react-native-router-flux';
 import { connect, Provider } from 'react-redux';
 import { store } from './client/store'
 import scenes from './client/userScenes'
+import storage from './client/common/storage'
 
 const RouterWithRedux = connect()(Router);
 
@@ -31,4 +32,8 @@ export default class RootRouter extends Component {
     }
 }
 
-AppRegistry.registerComponent('AwesomeProject', () => RootRouter);
+AppRegistry.registerComponent('AwesomeProject', () => {
+    let data = storage.getItem('hhh')
+    console.log(data)
+    return RootRouter
+});
